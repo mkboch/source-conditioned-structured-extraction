@@ -1,0 +1,55 @@
+{
+  "axis": "B_stochastic_decoding",
+  "manifest": "manifests/milu1062_manifest.csv",
+  "mode": "MM",
+  "models": {
+    "Gemma-4-31B": {
+      "DET_P0": "results/final_task_specific/stageB_gemma4_31b_P0_relations1024/records.jsonl",
+      "S1": "results/final_task_specific/stageD_gemma4_31b_seed20260821_relations1024_MM/records.jsonl",
+      "S2": "results/final_task_specific/stageD_gemma4_31b_seed20260822_relations1024_MM/records.jsonl",
+      "S3": "results/final_task_specific/stageD_gemma4_31b_seed20260823_relations1024_MM/records.jsonl"
+    },
+    "InternVL3-14B": {
+      "DET_P0": "results/final_task_specific/stageB_internvl3_14b_P0_relations1024/records.jsonl",
+      "S1": "results/final_task_specific/stageD_internvl3_14b_seed20260821_relations1024_MM/records.jsonl",
+      "S2": "results/final_task_specific/stageD_internvl3_14b_seed20260822_relations1024_MM/records.jsonl",
+      "S3": "results/final_task_specific/stageD_internvl3_14b_seed20260823_relations1024_MM/records.jsonl"
+    },
+    "Qwen3-VL-32B-Instruct": {
+      "DET_P0": "results/final_task_specific/merged/Qwen3-VL-32B-Instruct.jsonl",
+      "S1": "results/qwen_axis_completion_20260903/qwen_S20260821_relations1024_MM/records.jsonl",
+      "S2": "results/qwen_axis_completion_20260903/qwen_S20260822_relations1024_MM/records.jsonl",
+      "S3": "results/qwen_axis_completion_20260903/qwen_S20260823_relations1024_MM/records.jsonl"
+    }
+  },
+  "pairs": [
+    [
+      "S1",
+      "S2"
+    ],
+    [
+      "S1",
+      "S3"
+    ],
+    [
+      "S2",
+      "S3"
+    ],
+    [
+      "DET_P0",
+      "S1"
+    ],
+    [
+      "DET_P0",
+      "S2"
+    ],
+    [
+      "DET_P0",
+      "S3"
+    ]
+  ],
+  "phase": "final three-model relations @1024",
+  "tasks": [
+    "triples"
+  ]
+}

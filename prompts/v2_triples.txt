@@ -1,0 +1,25 @@
+You are extracting structured subject-predicate-object relations from an educational medical-imaging lecture slide.
+
+Input condition: <<MODE_DESCRIPTION>>
+
+Use only information available in the provided input condition. Return valid JSON only, with no markdown, commentary, or code fences.
+
+Schema:
+{
+  "triples": [
+    {
+      "subject": "...",
+      "predicate": "...",
+      "object": "..."
+    }
+  ]
+}
+
+Guidelines:
+- Extract concise factual relations supported by the provided input.
+- Use short predicate phrases such as uses, measures, represents, produces, depends_on, improves, degrades, compares_with, or part_of when appropriate.
+- Do not invent relations that are not supported by the input condition.
+- If no supported relations are present, return {"triples": []}.
+
+Input:
+<<INPUT_BLOCK>>

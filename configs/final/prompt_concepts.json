@@ -1,0 +1,40 @@
+{
+  "axis": "C_prompt_paraphrase",
+  "manifest": "manifests/milu1062_manifest.csv",
+  "mode": "MM",
+  "models": {
+    "Gemma-4-31B": {
+      "P0": "BASELINE_V2",
+      "P1": "results/stage2_full1062/gemma4_31b_p1_MM/records.jsonl",
+      "P2": "results/stage2_full1062/gemma4_31b_p2_MM/records.jsonl"
+    },
+    "InternVL3-14B": {
+      "P0": "BASELINE_V2",
+      "P1": "results/stage2_full1062/internvl3_14b_p1_MM/records.jsonl",
+      "P2": "results/stage2_full1062/internvl3_14b_p2_MM/records.jsonl"
+    },
+    "Qwen3-VL-32B-Instruct": {
+      "P0": "results/final_task_specific/merged/Qwen3-VL-32B-Instruct.jsonl",
+      "P1": "results/qwen_axis_completion_20260903/qwen_P1_concepts512_MM/records.jsonl",
+      "P2": "results/qwen_axis_completion_20260903/qwen_P2_concepts512_MM/records.jsonl"
+    }
+  },
+  "pairs": [
+    [
+      "P0",
+      "P1"
+    ],
+    [
+      "P0",
+      "P2"
+    ],
+    [
+      "P1",
+      "P2"
+    ]
+  ],
+  "phase": "final three-model concepts @512",
+  "tasks": [
+    "concepts"
+  ]
+}

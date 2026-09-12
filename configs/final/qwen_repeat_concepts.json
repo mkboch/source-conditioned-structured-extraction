@@ -1,0 +1,21 @@
+{
+  "axis": "A_deterministic_rerun",
+  "manifest": "manifests/milu1062_manifest.csv",
+  "mode": "MM",
+  "models": {
+    "Qwen3-VL-32B-Instruct": {
+      "P0": "results/final_task_specific/merged/Qwen3-VL-32B-Instruct.jsonl",
+      "REPEAT": "results/qwen_axis_completion_20260903/qwen_P0_repeat_concepts512_MM/records.jsonl"
+    }
+  },
+  "pairs": [
+    [
+      "P0",
+      "REPEAT"
+    ]
+  ],
+  "phase": "Qwen deterministic repeat concepts 512",
+  "tasks": [
+    "concepts"
+  ]
+}

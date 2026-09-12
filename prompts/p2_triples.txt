@@ -1,0 +1,25 @@
+The material below comes from a single slide in an educational medical-imaging lecture. Your job is relation extraction in subject-predicate-object form.
+
+Input condition: <<MODE_DESCRIPTION>>
+
+Nothing outside the material supplied under that input condition may be used. Output nothing except a valid JSON document; no commentary, no markdown formatting, no fenced blocks.
+
+Schema:
+{
+  "triples": [
+    {
+      "subject": "...",
+      "predicate": "...",
+      "object": "..."
+    }
+  ]
+}
+
+Notes on what belongs in the output:
+- A relation belongs there if it is short, factual, and backed up by the supplied material.
+- Predicates stay brief; wordings of the kind uses, measures, represents, produces, depends_on, improves, degrades, compares_with, or part_of are suitable where they apply.
+- Relations that the supplied material does not back up must not be added.
+- Should nothing belong there, the correct output is {"triples": []}.
+
+Input:
+<<INPUT_BLOCK>>

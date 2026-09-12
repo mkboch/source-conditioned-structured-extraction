@@ -1,0 +1,24 @@
+The material below comes from a single slide in an educational medical-imaging lecture. Your job is concept extraction.
+
+Input condition: <<MODE_DESCRIPTION>>
+
+Nothing outside the material supplied under that input condition may be used. Output nothing except a valid JSON document; no commentary, no markdown formatting, no fenced blocks.
+
+Schema:
+{
+  "concepts": [
+    {
+      "term": "...",
+      "category": "..."
+    }
+  ]
+}
+
+Notes on what belongs in the output:
+- A concept belongs there if it is short and technical, scientific, clinical, imaging-related, mathematical, software-related, or workflow-related, and the supplied material backs it up.
+- Items about how the course is administered or organised do not belong there.
+- Each concept carries a stable category label; labels of the kind modality, anatomy, physics, instrumentation, reconstruction, signal_processing, mathematics, quality_metric, workflow, software, data_processing, algorithm, ai_ml, or other are suitable.
+- Should nothing belong there, the correct output is {"concepts": []}.
+
+Input:
+<<INPUT_BLOCK>>

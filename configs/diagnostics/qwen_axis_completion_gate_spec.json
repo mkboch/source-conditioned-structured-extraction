@@ -1,0 +1,62 @@
+[
+  {
+    "expected": 1062,
+    "name": "qwen_P0_repeat_concepts512_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_P0_repeat_concepts512_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_P0_repeat_relations1024_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_P0_repeat_relations1024_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_P1_concepts512_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_P1_concepts512_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_P1_relations1024_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_P1_relations1024_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_P2_concepts512_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_P2_concepts512_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_P2_relations1024_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_P2_relations1024_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_S20260821_concepts512_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_S20260821_concepts512_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_S20260821_relations1024_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_S20260821_relations1024_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_S20260822_concepts512_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_S20260822_concepts512_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_S20260822_relations1024_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_S20260822_relations1024_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_S20260823_concepts512_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_S20260823_concepts512_MM/records.jsonl"
+  },
+  {
+    "expected": 1062,
+    "name": "qwen_S20260823_relations1024_MM",
+    "path": "results/qwen_axis_completion_20260903/qwen_S20260823_relations1024_MM/records.jsonl"
+  }
+]

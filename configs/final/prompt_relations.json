@@ -1,0 +1,40 @@
+{
+  "axis": "C_prompt_paraphrase",
+  "manifest": "manifests/milu1062_manifest.csv",
+  "mode": "MM",
+  "models": {
+    "Gemma-4-31B": {
+      "P0": "results/final_task_specific/stageB_gemma4_31b_P0_relations1024/records.jsonl",
+      "P1": "results/final_task_specific/stageC_gemma4_31b_P1_relations1024_MM/records.jsonl",
+      "P2": "results/final_task_specific/stageC_gemma4_31b_P2_relations1024_MM/records.jsonl"
+    },
+    "InternVL3-14B": {
+      "P0": "results/final_task_specific/stageB_internvl3_14b_P0_relations1024/records.jsonl",
+      "P1": "results/final_task_specific/stageC_internvl3_14b_P1_relations1024_MM/records.jsonl",
+      "P2": "results/final_task_specific/stageC_internvl3_14b_P2_relations1024_MM/records.jsonl"
+    },
+    "Qwen3-VL-32B-Instruct": {
+      "P0": "results/final_task_specific/merged/Qwen3-VL-32B-Instruct.jsonl",
+      "P1": "results/qwen_axis_completion_20260903/qwen_P1_relations1024_MM/records.jsonl",
+      "P2": "results/qwen_axis_completion_20260903/qwen_P2_relations1024_MM/records.jsonl"
+    }
+  },
+  "pairs": [
+    [
+      "P0",
+      "P1"
+    ],
+    [
+      "P0",
+      "P2"
+    ],
+    [
+      "P1",
+      "P2"
+    ]
+  ],
+  "phase": "final three-model relations @1024",
+  "tasks": [
+    "triples"
+  ]
+}

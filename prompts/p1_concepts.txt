@@ -1,0 +1,24 @@
+Task: identify the structured concepts presented on one slide from an educational medical-imaging lecture.
+
+Input condition: <<MODE_DESCRIPTION>>
+
+Ground every concept solely in the material given for that input condition. Your entire reply must be valid JSON - omit any prose, any explanation, and any code fences.
+
+Schema:
+{
+  "concepts": [
+    {
+      "term": "...",
+      "category": "..."
+    }
+  ]
+}
+
+Requirements:
+- Report brief technical, scientific, clinical, imaging, mathematical, software, or workflow concepts for which the given material provides support.
+- Leave out anything relating to course administration or course logistics.
+- Label each concept with a stable category; labels such as modality, anatomy, physics, instrumentation, reconstruction, signal_processing, mathematics, quality_metric, workflow, software, data_processing, algorithm, ai_ml, or other are appropriate.
+- When the material supports no concept at all, reply {"concepts": []}.
+
+Input:
+<<INPUT_BLOCK>>

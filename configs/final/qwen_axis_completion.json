@@ -1,0 +1,44 @@
+{
+  "budgets": {
+    "concepts": 512,
+    "relations": 1024
+  },
+  "cohort_size": 1062,
+  "conditions": [
+    "P0 deterministic repeat: concepts",
+    "P0 deterministic repeat: relations",
+    "P1: concepts",
+    "P1: relations",
+    "P2: concepts",
+    "P2: relations",
+    "seed 20260821: concepts",
+    "seed 20260821: relations",
+    "seed 20260822: concepts",
+    "seed 20260822: relations",
+    "seed 20260823: concepts",
+    "seed 20260823: relations"
+  ],
+  "deterministic_seed": 20260815,
+  "mode": "MM",
+  "model": {
+    "id": "Qwen/Qwen3-VL-32B-Instruct",
+    "revision": "0cfaf48183f594c314753d30a4c4974bc75f3ccb"
+  },
+  "name": "Qwen axis completion",
+  "stochastic": {
+    "do_sample": true,
+    "seeds": [
+      20260821,
+      20260822,
+      20260823
+    ],
+    "temperature": 0.7,
+    "top_p": 1.0
+  },
+  "technical_gate": {
+    "aggregate_validity_min_pct": 95.0,
+    "degenerate_repetition_max_pct": 1.0,
+    "generation_errors_max": 0,
+    "per_cell_validity_min_pct": 90.0
+  }
+}

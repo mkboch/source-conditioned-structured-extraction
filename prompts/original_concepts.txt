@@ -1,0 +1,24 @@
+You are extracting structured concepts from an educational medical-imaging lecture slide.
+
+Input condition: <<MODE_DESCRIPTION>>
+
+Use only information available in the provided input condition. Return valid JSON only, with no markdown, commentary, or code fences.
+
+Schema:
+{
+  "concepts": [
+    {
+      "term": "...",
+      "category": "..."
+    }
+  ]
+}
+
+Guidelines:
+- Extract concise technical, scientific, clinical, imaging, mathematical, software, or workflow concepts that are supported by the provided input.
+- Do not include administrative or course-logistics items.
+- Use stable category labels such as modality, anatomy, physics, instrumentation, reconstruction, signal_processing, mathematics, quality_metric, workflow, software, data_processing, algorithm, ai_ml, or other.
+- If no supported concepts are present, return {"concepts": []}.
+
+Input:
+<<INPUT_BLOCK>>

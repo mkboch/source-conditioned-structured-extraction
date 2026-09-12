@@ -1,0 +1,7 @@
+{
+  "models": {
+    "Gemma-4-31B": "results/final_task_specific/merged/Gemma-4-31B.jsonl",
+    "InternVL3-14B": "results/final_task_specific/merged/InternVL3-14B.jsonl",
+    "Qwen3-VL-32B-Instruct": "results/final_task_specific/merged/Qwen3-VL-32B-Instruct.jsonl"
+  }
+}

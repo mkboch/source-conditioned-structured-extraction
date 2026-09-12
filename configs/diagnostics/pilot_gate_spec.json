@@ -1,0 +1,52 @@
+[
+  {
+    "expected": 200,
+    "name": "gemma4_31b_p1_MM",
+    "path": "results/stage2_pilot100/gemma4_31b_p1_MM/records.jsonl"
+  },
+  {
+    "expected": 200,
+    "name": "gemma4_31b_p2_MM",
+    "path": "results/stage2_pilot100/gemma4_31b_p2_MM/records.jsonl"
+  },
+  {
+    "expected": 200,
+    "name": "internvl3_14b_p1_MM",
+    "path": "results/stage2_pilot100/internvl3_14b_p1_MM/records.jsonl"
+  },
+  {
+    "expected": 200,
+    "name": "internvl3_14b_p2_MM",
+    "path": "results/stage2_pilot100/internvl3_14b_p2_MM/records.jsonl"
+  },
+  {
+    "expected": 200,
+    "name": "gemma4_31b_seed20260821_MM",
+    "path": "results/stage4_pilot100/gemma4_31b_seed20260821_MM/records.jsonl"
+  },
+  {
+    "expected": 200,
+    "name": "gemma4_31b_seed20260822_MM",
+    "path": "results/stage4_pilot100/gemma4_31b_seed20260822_MM/records.jsonl"
+  },
+  {
+    "expected": 200,
+    "name": "gemma4_31b_seed20260823_MM",
+    "path": "results/stage4_pilot100/gemma4_31b_seed20260823_MM/records.jsonl"
+  },
+  {
+    "expected": 200,
+    "name": "internvl3_14b_seed20260821_MM",
+    "path": "results/stage4_pilot100/internvl3_14b_seed20260821_MM/records.jsonl"
+  },
+  {
+    "expected": 200,
+    "name": "internvl3_14b_seed20260822_MM",
+    "path": "results/stage4_pilot100/internvl3_14b_seed20260822_MM/records.jsonl"
+  },
+  {
+    "expected": 200,
+    "name": "internvl3_14b_seed20260823_MM",
+    "path": "results/stage4_pilot100/internvl3_14b_seed20260823_MM/records.jsonl"
+  }
+]

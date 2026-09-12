@@ -1,0 +1,117 @@
+{
+  "analysis_definitions": {
+    "adds_at_least_one": "item_set(1024) - item_set(512) is non-empty",
+    "both_nonempty_jaccard": "further restricted to both sides emitting >=1 item",
+    "exact_set_equality": "item_set(512) == item_set(1024)",
+    "gate": "IDENTICAL frozen thresholds: >=95% aggregate technical validity, >=90% per (mode,task) cell, <=1% degenerate repetition, zero generation errors",
+    "item_set": "frozen V2 definition: normalised set of 'subject|predicate|object' for items with all three fields truthy",
+    "removes_or_changes_at_least_one": "item_set(512) - item_set(1024) is non-empty",
+    "truncation_associated_invalid": "parse failed AND raw output does not end in '}' or ']' (stops mid-structure)",
+    "uncertainty": "lecture-level cluster bootstrap, 10000 resamples, seed 20260821",
+    "validity": "json_parse_success AND schema_valid AND no generation_error. Invalid outputs are NEVER coerced to empty structures.",
+    "validity_aware_jaccard": "both sides valid AND union non-empty; valid co-empty pairs EXCLUDED (never scored as agreement)"
+  },
+  "created_utc": "2026-08-24T22:45:00Z",
+  "data": {
+    "cohort": "Frozen Pilot-100 (exact same 100 slides used in V2 and V3)",
+    "n_slides": 100,
+    "parent_manifest_sha256": "818bfc2900b6da99604499a55c2a294988ee8ee66a251a4ce3675dd41bed1e3e",
+    "pilot100_manifest": "manifests/pilot100_manifest.csv",
+    "pilot100_manifest_sha256": "bc6531376884f3488d71e437ea8916a29e684d18b54a1b7160d84534c711392a"
+  },
+  "decoding": {
+    "changed_relative_to_frozen_protocol": "ONLY max_new_tokens",
+    "conditions": {
+      "A": {
+        "max_new_tokens": 512,
+        "source": "REUSED - no new inference"
+      },
+      "B": {
+        "max_new_tokens": 1024,
+        "source": "NEW inference, all three models"
+      }
+    },
+    "do_sample": false,
+    "seed": 20260815,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "experiment_id": "relation_token_budget_sensitivity_512_vs_1024",
+  "grid": {
+    "condition_B_new_generations": "3 models x 3 sources x 1 task x 100 slides = 900"
+  },
+  "models": [
+    {
+      "adapter": "InternVL3Adapter (frozen, run_structured_extraction_v2.py)",
+      "dtype": "bfloat16",
+      "environment": "python (see environment/ENVIRONMENT.md)",
+      "flash_attention": false,
+      "gate_status_at_512": "PASS",
+      "max_tiles": 12,
+      "model_id": "OpenGVLab/InternVL3-14B",
+      "name": "InternVL3-14B",
+      "python_version": "3.13.11",
+      "reuse_512_from": "experiment_v2/results_full1062_internvl3_14b/full1062/records.jsonl (restricted to Pilot-100)",
+      "reuse_512_identity_verified": true,
+      "revision": "419aa10d2db7da6c64382ad3124f79a60cec42aa",
+      "serving_family": "transformers_AutoModel_trust_remote_code",
+      "torch_version": "2.9.1+cu128",
+      "transformers_version": "4.57.6"
+    },
+    {
+      "adapter": "Gemma4Adapter (frozen, run_structured_extraction_gemma4_v2.py)",
+      "dtype": "bfloat16",
+      "environment": "python (Gemma environment; see environment/ENVIRONMENT.md)",
+      "gate_status_at_512": "PASS",
+      "model_id": "google/gemma-4-31b-it",
+      "name": "Gemma-4-31B",
+      "python_version": "3.13.11",
+      "reuse_512_from": "experiment_v2/results_full1062_gemma4_31b/full1062/records.jsonl (restricted to Pilot-100)",
+      "reuse_512_identity_verified": true,
+      "revision": "145dc2508c480a64b47242f160d286cff94a2343",
+      "serving_family": "transformers_AutoModelForMultimodalLM",
+      "torch_version": "2.9.1+cu128",
+      "transformers_version": "5.14.1"
+    },
+    {
+      "adapter": "Qwen3VLAdapter (code/v3_runner.py)",
+      "dtype": "bfloat16",
+      "environment": "python (see environment/ENVIRONMENT.md)",
+      "gate_status_at_512": "FAIL (aggregate 91.33%; TX_triples 69.0%) - see audits/STAGE7_QWEN_GATE_FAILURE.md",
+      "identity_verification": "Model id and revision read directly from the 600 stored Pilot-100 records in results/stage7_pilot100/qwen3vl_32b_instruct/records.jsonl (single unique value for model_id, model_revision, model_dtype, generation_config, prompt_sha256, dataset_manifest_hash), cross-checked against DECISIONS.md and audits/STAGE7_QWEN_GATE_FAILURE.md, and confirmed present in the local HF snapshot. VERIFIED - not guessed.",
+      "model_id": "Qwen/Qwen3-VL-32B-Instruct",
+      "name": "Qwen3-VL-32B-Instruct",
+      "python_version": "3.13.11",
+      "reuse_512_from": "results/stage7_pilot100/qwen3vl_32b_instruct/records.jsonl (relations only)",
+      "reuse_512_identity_verified": true,
+      "revision": "0cfaf48183f594c314753d30a4c4974bc75f3ccb",
+      "serving_family": "transformers_Qwen3VLForConditionalGeneration",
+      "torch_version": "2.9.1+cu128",
+      "transformers_version": "4.57.6"
+    }
+  ],
+  "ordering_discipline": {
+    "claims": "Section D (source ordering at 1024) is DIAGNOSTIC ONLY. No manuscript claim is made from this experiment.",
+    "qwen_gate_rule": "Qwen is evaluated against the IDENTICAL frozen >=95% aggregate gate under the symmetric 1024 protocol. If it passes, record only 'Eligible under symmetric 1024-token diagnostic protocol.' Do NOT launch full1062. If it fails, freeze the failure. No further rescue.",
+    "rule": "Output-health statistics (section A) are computed and frozen BEFORE any scientific overlap (sections B, C, D) is inspected."
+  },
+  "prompt": {
+    "canonical_copy": "prompts/original_relations.txt",
+    "changed": false,
+    "file_runner_loads": "prompts/v2_triples.txt",
+    "sha256": "347f7ba57df62c2b92a1e402c8b387dbbbe29c133a9528c322b8b913e9697374",
+    "variant": "P0 (original frozen relation prompt) ONLY"
+  },
+  "purpose": "Symmetric protocol-sensitivity diagnostic on the relation-extraction output-token budget. Applied IDENTICALLY to every model. This is NOT a model-specific rescue: no model's prompt, parser, schema, temperature, source condition or any other serving parameter is changed, and the 1024 condition is run for all models including those that already pass at 512.",
+  "source_conditions": [
+    "MM",
+    "TX",
+    "IMG"
+  ],
+  "status_at_freeze": "FROZEN BEFORE ANY 1024-TOKEN INFERENCE WAS RUN",
+  "task": {
+    "note": "The frozen V2 code names this task 'triples'. No task was renamed.",
+    "on_disk_task_identifier": "triples",
+    "task": "relations"
+  }
+}

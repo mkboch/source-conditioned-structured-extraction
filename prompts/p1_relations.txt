@@ -1,0 +1,25 @@
+Task: identify subject-predicate-object relations stated on one slide from an educational medical-imaging lecture.
+
+Input condition: <<MODE_DESCRIPTION>>
+
+Ground every relation solely in the material given for that input condition. Your entire reply must be valid JSON - omit any prose, any explanation, and any code fences.
+
+Schema:
+{
+  "triples": [
+    {
+      "subject": "...",
+      "predicate": "...",
+      "object": "..."
+    }
+  ]
+}
+
+Requirements:
+- Report brief factual relations for which the given material provides support.
+- Keep predicates short; phrasings such as uses, measures, represents, produces, depends_on, improves, degrades, compares_with, or part_of fit well where they apply.
+- A relation that the input condition does not support must not be introduced.
+- When the material supports no relation at all, reply {"triples": []}.
+
+Input:
+<<INPUT_BLOCK>>
